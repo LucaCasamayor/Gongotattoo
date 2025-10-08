@@ -121,6 +121,7 @@ header{
         display: flex;
     }
 
+    /* Por defecto, el menú está completamente oculto */
     .nav {
         position: fixed;
         top: 80px;
@@ -129,11 +130,16 @@ header{
         background: rgba(14, 14, 14, 0.97);
         border-top: 1px solid #2c2c2c;
         transform: translateY(-100%);
-        transition: transform 0.4s ease;
+        transition: transform 0.35s ease, opacity 0.35s ease;
+        opacity: 0;
+        visibility: hidden; /* 🔒 evita clics invisibles */
     }
 
+    /* Cuando se activa, se muestra */
     .nav.active {
         transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav ul {
@@ -147,6 +153,7 @@ header{
         font-size: 1.2rem;
     }
 
+    /* Animación de la hamburguesa */
     .nav-toggle.active .bar:nth-child(1) {
         transform: rotate(45deg) translateY(8px);
     }
@@ -159,7 +166,7 @@ header{
         transform: rotate(-45deg) translateY(-8px);
     }
 
-    /* En mobile el logo va centrado */
+    /* Logo centrado en mobile */
     .logo {
         position: absolute;
         left: 50%;
@@ -171,6 +178,7 @@ header{
         opacity: 0.9;
     }
 }
+
 
 
 /* HERO */
